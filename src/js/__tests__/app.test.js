@@ -1,12 +1,12 @@
 import Validator from '../app';
 
-test('Латинские буквы', () => {
+test('Содержит латинские буквы', () => {
   const validator = new Validator();
   const result = validator.validateUsername('Maxim');
   expect(result).toBe(true);
 });
 
-test('Кириллица', () => {
+test('Содержит кириллицу', () => {
   const validator = new Validator();
   const result = validator.validateUsername('Привет');
   expect(result).toBe(false);
@@ -32,11 +32,11 @@ test('Начинается с цифры', () => {
 
 test('Заканчивается цифрой', () => {
   const validator = new Validator();
-  const result = validator.validateUsername('f777');
+  const result = validator.validateUsername('user7');
   expect(result).toBe(false);
 });
 
-test('Более трех цифр подряд', () => {
+test('Содержит более трех цифр подряд', () => {
   const validator = new Validator();
   const result = validator.validateUsername('T234423new');
   expect(result).toBe(false);
